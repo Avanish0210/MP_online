@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: heart-disease-prediction-api
+    runtime: python
+    rootDir: HeartDiseaseDeployment
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    healthCheckPath: /health
